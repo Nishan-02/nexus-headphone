@@ -1,24 +1,23 @@
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
-import TargetCursor from "@/components/TargetCursor";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-body" });
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-poppins",
+  display: "swap",
+});
 
 export const metadata = {
-  title: "Apex Ultra G-1 | Premium Audio",
-  description: "Experience the future of personal acoustics with Apex Ultra G-1.",
+  title: "NEXUS Audio | Premium Headphones, Earbuds & Speakers",
+  description: "Shop premium audio gear at NEXUS. True wireless earbuds, noise-cancelling headphones, Bluetooth speakers & smartwatches. Bold. Loud. Limitless.",
+  keywords: "headphones, earbuds, bluetooth speakers, true wireless, noise cancelling, smartwatches, audio",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${inter.variable} font-body bg-background text-white`}>
-        <TargetCursor 
-          spinDuration={2}
-          hideDefaultCursor
-          parallaxOn
-          hoverDuration={0.2}
-        />
+    <html lang="en">
+      <body className={`${poppins.variable} nexus-body`}>
         {children}
       </body>
     </html>
